@@ -11,7 +11,7 @@
             "version": "20"
         }
     },
-    "postCreateCommand": "npm install -g @anthropic-ai/claude-code && uv sync",
+    "postCreateCommand": "npm install -g @anthropic-ai/claude-code && uv sync && playwright install",
     "mounts": [
         "source=${localEnv:HOME}/.claude,target=/home/vscode/.claude,type=bind",
         "source=${localEnv:HOME}/.claude.json,target=/home/vscode/.claude.json,type=bind"
@@ -24,7 +24,6 @@
                 "mikestead.dotenv",
                 "eamodio.gitlens",
                 "usernamehw.errorlens",
-                "ms-azuretools.vscode-docker",
                 "christian-kohler.path-intellisense",
                 "wayou.vscode-todo-highlight",
                 "pkief.material-icon-theme"
@@ -37,10 +36,7 @@
                 "editor.insertSpaces": true,
                 "editor.detectIndentation": false,
                 "files.trimFinalNewlines": true,
-                "files.trimTrailingWhitespace": true,
-                "yaml.customTags": [
-                    "!reference sequence"
-                ]
+                "files.trimTrailingWhitespace": true
             }
         }
     }

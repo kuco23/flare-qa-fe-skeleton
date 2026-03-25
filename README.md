@@ -16,6 +16,8 @@ uv sync
 playwright install
 ```
 
+**Note:** The devcontainer mounts `~/.claude` and `~/.claude.json` from your host for Claude Code configuration. If these don't exist on your machine, create them first: `mkdir -p ~/.claude && echo '{}' > ~/.claude.json`
+
 ### 2. Configure Environment
 
 ```bash
