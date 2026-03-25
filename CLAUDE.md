@@ -12,7 +12,6 @@ This is an automated frontend testing framework for crypto protocol interfaces u
 - `skills/` — Technical recipes for reusable patterns
 - `pages/` — Page objects (selectors + UI actions)
 - `tests/` — Test files (generated from specs)
-- `chain/` — Blockchain interaction layer (optional, project-specific)
 - `conftest.py` — Shared Pytest fixtures
 
 ## Test Generation Workflow
@@ -38,7 +37,7 @@ When asked to implement a test:
 ## Coding Conventions
 
 - One test function per spec
-- Test function names match spec filenames: `specs/faucet/request-c2flr.md` → `test_request_c2flr`
+- Test function names match spec filenames: `specs/feature/my-test.md` → `test_my_test`
 - Use fixtures from `conftest.py` — never instantiate browsers or clients directly
 - Page objects are the only layer that touches selectors — tests never use raw locators
 - Assertions belong in the test, not in the page object
