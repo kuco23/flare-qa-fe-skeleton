@@ -36,7 +36,8 @@ def test_request_c2flr(
     assert chain_client.get_balance(evm_address) == 0
 
     faucet_page.request_c2flr(evm_address)
-    faucet_page.expect_success()
+    success_message = faucet_page.get_success_message()
+    assert success_message is not None, "Expected 'Tokens sent' success message"
 
     deadline = time.time() + 60
     while time.time() < deadline:
