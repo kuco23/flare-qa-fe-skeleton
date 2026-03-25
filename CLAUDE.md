@@ -10,9 +10,10 @@ This is an automated frontend testing framework for crypto protocol interfaces u
 - `domain/protocols/` — How the crypto protocol works
 - `domain/app/` — Shared UI assumptions across the application
 - `skills/` — Technical recipes for reusable patterns
-- `pages/` — Page objects (selectors + UI actions)
-- `tests/` — Test files (generated from specs)
-- `conftest.py` — Shared Pytest fixtures
+- `tests/` — All test code lives here:
+  - `tests/conftest.py` — Shared Pytest fixtures
+  - `tests/pages/` — Page objects (selectors + UI actions)
+  - `tests/test_*.py` — Test files (generated from specs)
 
 ## Test Generation Workflow
 
@@ -21,7 +22,7 @@ When asked to implement a test:
 1. Read the spec file in `specs/`
 2. Read all domain docs listed in the spec's Domain References section
 3. Check `skills/` for relevant technical patterns
-4. Review existing page objects in `pages/`
+4. Review existing page objects in `tests/pages/`
 5. Create or update the page object if needed
 6. Write the test in `tests/test_<spec-filename>.py`
 7. Run the test to verify it works
@@ -30,7 +31,7 @@ When asked to implement a test:
 
 - Specs: `specs/<feature-area>/<test-name>.md`
 - Tests: `tests/test_<test-name>.py` — filename matches the spec
-- Pages: `pages/<feature>_page.py` — one per distinct page or major component
+- Pages: `tests/pages/<feature>_page.py` — one per distinct page or major component
 - Domain: `domain/protocols/<name>.md`, `domain/app/<name>.md`
 - Skills: `skills/<name>.md`
 
@@ -38,7 +39,7 @@ When asked to implement a test:
 
 - One test function per spec
 - Test function names match spec filenames: `specs/feature/my-test.md` → `test_my_test`
-- Use fixtures from `conftest.py` — never instantiate browsers or clients directly
+- Use fixtures from `tests/conftest.py` — never instantiate browsers or clients directly
 - Page objects are the only layer that touches selectors — tests never use raw locators
 - Assertions belong in the test, not in the page object
 - Page objects return state (text, visibility, counts) — they do not assert

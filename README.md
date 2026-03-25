@@ -56,7 +56,7 @@ Claude will:
 1. Read the spec
 2. Read referenced domain docs
 3. Check `skills/` for relevant technical patterns
-4. Review existing page objects
+4. Review existing page objects in `tests/pages/`
 5. Create or update page objects as needed
 6. Write the test in `tests/test_my_test_case.py`
 
@@ -84,10 +84,10 @@ pytest --headed
 ├── specs/
 │   ├── _template.md       # Spec template — start here
 │   └── <feature>/         # Specs organized by feature area
-├── pages/                 # Page objects (selectors + UI actions)
-├── tests/                 # Test files (1:1 with specs)
-├── chain/                 # Optional: blockchain interaction layer
-└── conftest.py            # Shared fixtures
+└── tests/                 # All test code lives here
+    ├── conftest.py        # Shared fixtures
+    ├── pages/             # Page objects (selectors + UI actions)
+    └── test_*.py          # Test files (1:1 with specs)
 ```
 
 ## Day-to-Day Workflows
@@ -102,10 +102,10 @@ pytest --headed
 
 | What Changed | What to Update |
 |---|---|
-| Selector renamed | `pages/` only |
-| UX flow changed | `pages/` + `specs/` |
+| Selector renamed | `tests/pages/` only |
+| UX flow changed | `tests/pages/` + `specs/` |
 | Protocol changed | `domain/protocols/` + affected `specs/` |
-| App-wide UI pattern changed | `domain/app/` + affected `pages/` |
+| App-wide UI pattern changed | `domain/app/` + affected `tests/pages/` |
 
 ### Starting a New Project
 
@@ -117,7 +117,7 @@ pytest --headed
 
 - **Specs describe user actions**, not selectors or implementation details
 - **1:1 mapping** between spec files and test files, matched by filename
-- **Page objects own all selectors** — tests never use raw locators
+- **Page objects** (`tests/pages/`) **own all selectors** — tests never use raw locators
 - **Page objects don't assert** — they return state, tests assert on it
 - **Fixtures handle setup** — tests read like spec steps
 
