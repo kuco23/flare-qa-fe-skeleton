@@ -22,10 +22,11 @@ When asked to implement a test:
 1. Read the spec file in `specs/`
 2. Read all domain docs listed in the spec's Domain References section
 3. Check `skills/` for relevant technical patterns
-4. Review existing page objects in `tests/pages/`
-5. Create or update the page object if needed
-6. Write the test in `tests/test_<spec-filename>.py`
-7. Run the test to verify it works
+4. Check `.env.example` for available environment variables — use these in fixtures and tests instead of hardcoding values
+5. Review existing page objects in `tests/pages/`
+6. Create or update the page object if needed
+7. Write the test in `tests/test_<spec-filename>.py`
+8. Run the test to verify it works
 
 ## Naming Conventions
 

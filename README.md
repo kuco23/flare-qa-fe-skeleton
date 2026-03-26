@@ -8,15 +8,13 @@ Automated frontend testing framework for crypto protocol interfaces. Clone this 
 
 ```bash
 # Clone the skeleton
-git clone <skeleton-repo-url> my-project-qa
+git clone <flare-fe-skeleton-urll> my-project-qa
 cd my-project-qa
 
 # Open in devcontainer (recommended) or install manually
 uv sync
 playwright install
 ```
-
-**Note:** The devcontainer mounts `~/.claude` and `~/.claude.json` from your host for Claude Code configuration. If these don't exist on your machine, create them first: `mkdir -p ~/.claude && echo '{}' > ~/.claude.json`
 
 ### 2. Configure Environment
 
@@ -30,21 +28,22 @@ cp .env.example .env
 Describe your protocol in `domain/protocols/`:
 
 ```bash
-cp domain/protocols/.gitkeep domain/protocols/my-protocol.md
 # Write: what the protocol does, its mechanics, key concepts
+vi domain/protocols/my-protocol.md
 ```
 
 Document shared UI patterns in `domain/app/`:
 
 ```bash
-cp domain/app/.gitkeep domain/app/notifications.md
 # Write: toast patterns, wallet UX, display conventions
+vi domain/app/notifications.md
 ```
 
 ### 4. Write a Spec
 
 ```bash
 cp specs/_template.md specs/my-feature/my-test-case.md
+vi specs/my-feature/my-test-case.md
 # Fill in: Context, Preconditions, Steps, Expected Results, Domain References
 ```
 
