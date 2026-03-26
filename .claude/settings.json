@@ -1,17 +1,21 @@
 {
-  "enabledPlugins": {
-    "superpowers@claude-plugins-official": true
-  },
-  "permissions": {
-    "allow": [
-        "Bash(ls *)",
-        "Bash(cat *)",
-        "Bash(uv sync:*)",
-        "Bash(uv lock:*)",
-        "Bash(uv pip:*)",
-        "Bash(uv add:*)",
-        "Bash(uv remove:*)",
-        "Read"
-    ]
-  }
+    "enabledPlugins": {
+        "superpowers@claude-plugins-official": true
+    },
+    "permissions": {
+        "allow": [
+            "Bash(ls *)",
+            "Bash(cat *)",
+            "Bash(uv sync:*)",
+            "Bash(uv lock:*)",
+            "Bash(uv pip:*)",
+            "Bash(uv add:*)",
+            "Bash(uv remove:*)",
+            "Read"
+        ]
+    },
+    "attribution": {
+        "commit": "Co-Authored-By: Claude <noreply@anthropic.com>",
+        "pr": "Generated with Claude Code"
+    }
 }
