@@ -4,8 +4,8 @@
     },
     "permissions": {
         "allow": [
-            "Bash(ls *)",
-            "Bash(cat *)",
+            "Bash(ls:*)",
+            "Bash(cat:*)",
             "Bash(uv sync:*)",
             "Bash(uv lock:*)",
             "Bash(uv pip:*)",
