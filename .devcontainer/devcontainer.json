@@ -4,6 +4,7 @@
 	"name": "QA Frontend Automation Skeleton",
 	"remoteUser": "vscode",
     "build": {
+        "context": "..",
         "dockerfile": "Dockerfile"
     },
     "features": {
@@ -12,7 +13,7 @@
         }
     },
     "initializeCommand": "mkdir -p ${localEnv:HOME}/.claude && touch ${localEnv:HOME}/.claude.json",
-    "postCreateCommand": "npm install -g @anthropic-ai/claude-code && uv sync && playwright install",
+    "postCreateCommand": "npm install -g @anthropic-ai/claude-code && uv sync",
     "mounts": [
         "source=${localEnv:HOME}/.claude,target=/home/vscode/.claude,type=bind",
         "source=${localEnv:HOME}/.claude.json,target=/home/vscode/.claude.json,type=bind"
@@ -30,6 +31,7 @@
                 "pkief.material-icon-theme"
             ],
             "settings": {
+                "python.defaultInterpreterPath": "/home/vscode/.venv/bin/python",
                 "[python]": {
                     "editor.defaultFormatter": "ms-python.black-formatter",
                     "editor.tabSize": 4
